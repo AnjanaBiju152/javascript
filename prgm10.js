@@ -7,10 +7,8 @@
 // reminder = 8;
 // reverseNum = (reverseNum*10)+reminder
 // 0+8 = reverseNum
-
 // 2) reminder=4
 //    value=7
-
 // 3) reminder =7
 // value = 0
 // reverseNum = (84*10)+7 =847
@@ -27,3 +25,5 @@ while(num>0){
     num = Math.floor(num/10)  // 56   5
 }
 console.log(reverseNum);
+
+
