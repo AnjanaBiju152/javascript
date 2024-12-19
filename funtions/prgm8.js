@@ -1,5 +1,5 @@
 
-// Timer functionin js
+// Timer functions in js
 console.log("setInterval");
 console.log();
 
