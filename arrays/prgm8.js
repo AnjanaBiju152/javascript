@@ -88,10 +88,3 @@ console.log(startWithJ);
 console.log("****************************************************");
 
 
-console.log("6)reverse()");
-
-
-let ar = [1,2,3,4,5,6];
-console.log(ar.reverse());
-
-
