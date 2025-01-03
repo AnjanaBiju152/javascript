@@ -8,7 +8,7 @@ console.log("*******************************************");
 
 console.log("2)toLowerCase() ");
 
-let lastName  = 'Biju';
+let lastName = 'Biju';
 console.log(lastName.toLowerCase());
 console.log("***************************************************");
 
@@ -64,6 +64,6 @@ console.log("***************************************************");
 console.log("10)concat() ");
 
 let str1 = "anjana";
-let str2 ="biju"
-let result = str1.concat( str2);
+let str2 = "biju"
+let result = str1.concat(str2);
 console.log(result);
