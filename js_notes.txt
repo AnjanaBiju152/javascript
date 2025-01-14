@@ -64,3 +64,117 @@ increment or decrement value by 1
 + is used for string concatenation (string combining)
  if any value on left or right of the + symbol is string, then javascript convert
  the other value into string also
+
+ String Concatenation 
+---------------------
++ is used for string concatenation (string combining)
+if any value on left or right of the + symbol is string, then javascript convert
+the other value into string also
+conditional statements/ decision making satetements
+---------------------------------------------------
+1) if
+2) if else
+3) else if ladder
+4) while
+5) switch
+if
+--
+if(condition){
+ // if condition true, it execute this code
+}
+if else
+=======
+if(condition){
+ // if condition true, it execute this code
+}
+else{
+ // if condition fails, it execute this code
+}
+else if ladder
+-----------------
+- used to check multiple condition
+- if one condition fails, it check second condition, if second condition fails, it 
+check third condition, so on
+ syntax:
+ if(condition1){
+ // block of code to be executed
+ }
+ else if(condition2){
+ // block of code to be executed
+ }
+ else if(condition3){
+ // block of code to be executed
+ }
+ else{
+ // code of block to be executed if no codition is true
+ }
+ while
+ ------------
+ - Repeatedly execute a block of code as long as the specified condition is true
+ syntax:
+ initialize variable
+ while(condition){
+ // block of code to be executed
+ }
+ break: can be used to exist from the loop
+ do while
+ -----------------
+ - it execute the block of code atleast once and then repeatedly execute the block 
+of code as long as 
+ specified condition is true
+ syntax:
+ do{
+ // code to be executed
+ }while(condition)
+Ternary Operators
+-------------------
+simplified form of if else/ else if ladder
+syntax:
+condition?"code to execute":"code to execute"
+example:
+var num=46;
+num<50? "Num is less than 50" : "Num is greter than or equal to 50"
+shorthand operator
+---------------------
++= examaple x+=i x=x+i
+-= example x-=i x= x-i
+NaN = Not A Number
+parseInt(num) : used to remove decimal point from a number
+to find the length of a string = string.length
+to find the lenngth of a number = number.toString().length
+for loop
+--------------
+- to repeatedly execute a block of codes long as the
+ specified condition is true
+ syntax:
+ for(initializing a variable; condition; inccrement/decrement the variable){
+ // block of code tobe executed
+ }
+ nested loop
+ ------------
+ - loop inside another loop
+syntax:
+ for(initializing a variable; condition; inccrement/decrement the variable){
+ for(initializing a variable; condition; inccrement/decrement the variable){
+ // block of code tobe executed
+ }
+ }
+ switch
+ -----------
+- The switch statement is used to perform different actions based on different 
+conditions
+- The switch statement is used to select one of many code blocks to be executed
+syntax:
+switch(expression){
+ case x:
+ // code block to execute;
+ break;
+ case y:
+ // code block to execute
+ break
+ case z:
+ // code block to execute
+ break;
+ default:
+ // code block to execute
+}

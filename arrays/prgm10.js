@@ -1,6 +1,6 @@
 //nested array
 
-console.log("11)flat()");
+console.log("12flat()");
    
 let arr = [1,2,3,[4,5]];   
 let flatArray = arr.flat(1);

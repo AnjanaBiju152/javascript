@@ -73,3 +73,32 @@ const hasEvenNumber = num2.some((item) => item % 2 == 0);
 console.log(hasEvenNumber);
 
 console.log("***************************************************");
+
+
+console.log("10)join()");
+
+let arr = [1, 2, 3, 4, 5, 6]
+console.log(arr.join('-'));
+
+
+//check whether the string is palindrome or not
+
+var str = "malayalam";
+result3 = str.split();
+console.log(result3);
+
+let revArray = result3.reverse();
+console.log(revArray);
+
+const result1 = revArray.join();
+console.log(result1);
+
+
+if (str === result1) {
+    console.log("palindrome");
+
+}
+else {
+    console.log("not palindrome");
+
+}
