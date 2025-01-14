@@ -1,0 +1,277 @@
+javascript objects
+----------------
+- javascript objects are collection of key value pairs
+- it provide more clarity to the data stored
+- syntax: var variable_name = {
+ // key:value pairs
+}
+ var arr = ['john',28,true]
+ var person = {
+ name:'john',
+ age:28,
+ isMajor:true
+ }
+value can be string, integer, boolean, object, array, function
+comma is used to seperate each key-value collection
+Different ways to create an Object
+--------------------------
+1) Using object literal
+ var car={
+ name:"innova",
+ manufacturer:'Toyota',
+ price:2400000
+ }
+2) using new Object() syntax
+ let person = new Object();
+ person.name= "Todd";
+ person.age= 27;
+ person.email='abc@gmail.com'
+Different ways of accessing object properties
+---------------------------------------------
+1) Dot notation
+ eg: console.log(person.name)
+2) Bracket Notation
+ eg: console.log(person['name']);
+Adding new properties/keys
+--------------------
+1) Dot
+ person.mobileNumber = 9744468168
+2) Bracket
+ person['mobileNumber'] = 9744468168
+3) Object.assign(target,{key:value})
+Deleting a property/key
+----------------------
+delete object_name.key
+eg: delete person.age
+Example of Object with methods
+-------------------------------
+let calculator = {
+ sum:function(a,b){
+ return a+b
+ },
+ multiply:function(a,b){
+ return a*b
+ }
+}
+Checking for a particular property
+-------------------------------
+'key_name' in object_name 
+// return true or false
+For getting all keys
+for(let key in object_name){
+ console.log(key)
+}
+Update the value of a key
+------------------------
+object_name.key = "newValue"
+object_name['key']= "newvalue"
+Nested Object
+------------
+object inside an object
+eg: 
+let person = {
+ firstName:"John",
+ lastName:"Doe",
+ address:{
+ street:'123 main st',
+ city:'Newyork',
+ zipcode:34523
+ }
+}
+// to access city
+person.address.city
+Get all keys 
+-------------
+Object.keys(object_name)
+it returns an array
+Get all values
+-------------------
+Object.values(object_name)
+it returns an array
+Get combination of key value pairs
+-----------------------------------
+Object.entries(object_name)
+it returns an array
+Object.seal()
+-------------------
+This method is used to control the mutability of object
+- It prevent adding or removing properties
+- It allows modification for values of existing properties
+Object.freeze()
+-------------------
+This method is used to control the mutability of object
+- prevent adding, removing and modifying the properties
+Array of objects
+---------------------
+- each element in an array is an object
+eg:
+var student=[
+ {name:'john', branch:'cse'},
+ {name:'todd', branch:'eee'},
+ {name:'stachia', branch:'ece'}
+]
+eval()
+---------
+eval() is a function used to evaluate or execute a string in javascript
+Exception Handling
+--------------------------
+exception:Run time errors
+ - try-catch block is used to handle run time error
+ - try: Code that might commit errors
+ - catch: what to do if error occurs
+ - finally (not mandatory): control will come to this block, in both the cases
+spread and rest operator (...)
+------------------------------
+spread operator:
+ The spread syntax expands iterables (like array or object) into individual 
+elements where it is used.
+ eg: 
+ var array1=[1,2,3,4];
+ var array2 = [...array1,5,6,7,8]
+ var obj1={a:1,b:2}
+ var obj2={...obj1,c:3,d:4}
+Rest operator:
+ - mainly used for passing arguments to function
+ - we are not sure about,how many arguments the function expecting
+Array Destructuring
+-------------------
+Array destructuring in JS used to unpack values from array and store it into a 
+variable
+eg: var arr=[1,2,3]
+let [a,b,c]=arr;
+console.log(a);
+console.log(b);
+console.log(c)
+Object Destructuring
+---------------------------
+ Object destructuring is used to unpack proerties value in to 
+ variable
+ - variable must be key name
+ OOPS 
+ -------
+ - Object oriented programming system
+ procedural programming: programs created using functions and variables
+ object oriented programming: It make use of class, object, methods, properties, 
+constructor
+ Class: class is container that holds related methods, properties and constructor
+ - class act as a blue print for creating object
+ method: function inside a class is called method
+ function keyword is not needed to define method
+properties: variables inside a class is called properties
+ var, let, const keywords are not needed to define properties
+ 
+Object: instace of a class
+ - it is created from class
+constructor- it is a function, used to initialize values to properties
+this - this keword is used to access methods and properties inside a class
+this- called instace variable
+this- refers to properties and methods inside that specific class
+Syntax to create a Class
+------------------------
+class Class_name{
+ properties
+ constructor
+ methods
+}
+- thses properties, constructor and methods are not mandatory, all are optional
+eg:
+class Student{
+ name;
+ age;
+ constructor(){
+ this.name= "sulthan",
+ this.age= 28
+ }
+ printDetails(){
+ console.log("Student Name:", this.name);
+ console.log("Student Age:", this.age)
+ }
+}
+const obj = new Student();
+obj.printDetails()
+- if constructor is expecting some argumnents, then we need to pass this parameters
+while creating the object
+- if any method inside the class expecting some argumnets, then pass the parameter 
+while calling that method
+Pillers Of OOPS
+-------------------
+1) Inheritance
+2) Polymorphism
+3) Encapsulation
+4) Abstraction
+1) Inheritance: 
+ - It is a mechanism that allows, a class can inherit properties and methods from 
+another class
+ - mainly child class can access methods and properties in parent class
+ - extends keyword is used to implement inheritance
+2) Polymorphism
+ - behave differently based on number of arguments or method name from where it is 
+calling
+ a) method overloading
+ - not suported in javascript
+ - consider there are two methods with same, first method 
+ is accepting no argument and second method is accepting one
+ argument. If we call that method with no argumnet, it execute
+ first method and if we call method with one argumet, it execute
+ second method
+ - but in javascript it calls the last method in every case
+ 2) method overriding:
+ consider we have a parent class and a child class. In both class 
+ there are methods with same name
+ child class is inherited from parent class
+ if we create an object of child class and calls any method that are present
+ in both parent and child, method inside child class will execute
+ method inside child class overrides method in parent class
+3) Abstarction: 
+ - It is hiding the complex implemetation details of a system and 
+ exposing only the essential methods and features
+ eg: 
+ Date class
+4) Encapsulation:
+ - It provide privacy and maintain control over the transparency of properties 
+ and methods incide a class
+ - javascript not supporting access specifiers
+ For this Access specifiers are used
+ 3 types of access specifiers
+ ----------------------------
+ 1) Public
+ 2) Private
+ 3) Protected
+ 1) Public: 
+ - default access specifiers
+ - The class memeber can be accessible from any where
+ 
+ 2) Protected: 
+ - class memeber is accessible inside that class and its sub classes(child 
+class)
+ 3) Private:
+ - class member is accessible only within that class
+
+**************************************************************************
+
+ Javascript With HtML
+-------------------------
+DOM (Document Object Model)
+---
+- while browser loads a HTML page, it create a tree like structure with the 
+containing
+ html elements
+ - the tree consists of nodes, each node is an html element
+ How to apply javascript in HTML file
+ ------------------------------------
+ 1) internal
+ <script></script>
+ - it is better to use script after closing of body target
+ 2) external js
+ <script src="url"></script>
+How to access html elements
+----------------------------
+1) by tag name
+ document.getElementsByTagName('tag_name')
+ - it returns collection
+ - collection is a data type created by browser, similar to array
+ - we have to convert this collection into a normal Array for using it
+ Array.from(collection_name)
+ - then map each item in the array and apply the style
+ eg:
+ Array.from(collection_name).map(item=>item.style.color="green")

@@ -1,0 +1,234 @@
+Arrays
+ ----------------
+ - special type of variable that can hold more than one value at a time
+ - syntax: var varaible_name=[value1, value2, value3,...]
+ - values are seperated by comma
+ - eg: var fruits=['apple','orange','kiwi']
+ - eg: var marks=[23,45,34]
+ - array can hold multiple data type values
+ - eg: var arr=["innova",56, true]
+ - each element in an array is identified by index value
+ - index is start from 0
+ - .length can be used to find length of an array
+ - eg: fruits.length
+ - index range from 0 to length-1
+ main 4 built in method for array operations:
+ 1) push: insert an item into last position of an array
+ 2) pop: remove an item from the last position of an array
+ 3) shift: remove an item from the first position
+ 4) unshift: insert an item into first position
+Different ways to access elements in an array 
+---------------------------------------------
+1) for loop
+ for(var i=0; i<arr.length; i++){
+ console.log(arr[i])
+ }
+2) looping through index
+ for(var i in arr){
+ console.log(arr[i])
+ }
+3) looping through each item 
+ for(var item of arr){
+ console.log(item)
+ }
+Different array methods
+-------------------------
+1) length
+2) indexOf : to return the index of particular item
+ if item present in the array, it return its index value
+ if item is not present, it return -1
+var, let, const 
+==========================
+The above threes are used for variable declarartion. But they have different 
+behavior in terms 
+of scope, hoisting and mutability
+scope: boundary in which variables can be accessed
+var
+=======
+1) scope: Function scoped variables are declared with 'var' are scoped to the 
+function 
+in which they are declared, or globally if declared outside of a function
+(function scoped or Global scoped)
+2) Hoisting: 'var' varaibles are hoisted to the top of their scope and js 
+initialize its
+value as undefined
+3) Re Declaration: we can re-decalre var inside same scope. also we can re-assign 
+values
+let
+======
+1) scope: Block scoped, variable declared with let are limited to block in which 
+they are
+declared (eg: {} )
+2) Hoisting: Let are hoisted to the top of their block, But are not initalized with
+undefined value. JS kept this let variables in temperal dead zone. So accessing 
+them
+before delcaration results in 'reference error'
+3) Re-Declarartion: Not allowed within the same scope, but value can be re-assigned
+const
+===========
+1) Scope: same as let. variable declared with const are limited to block in
+ which they are declared (eg: {} ) 
+2) Hoisting: Let are hoisted to the top of their block, But are not initalized with
+undefined value. JS kept this let variables in temperal dead zone. So accessing 
+them
+before delcaration results in 'reference error'
+3) Re-delcaration : Not allowed within the same scope
+4) Assignment: Must be initialized at the time of declaration and cannot be 
+re-assigned
+sort 
+---------
+- in built js method used for sorting an array
+syntax:
+for single digit array to sort in ascending order:
+arr.sort()
+for more than one digit array in ascending order:
+arr.sort((a,b)=>a-b)
+for more than two digit array in descending order
+arr.sort((a,b)=>b-a);
+for sorting string array in alpahbetic order:
+arr.sort();
+for sorting string array in descending order:
+arr.sort((a, b) => b.localeCompare(a) )
+forEach()
+----------
+- used to iterate over each element in an array
+arr.forEach((element)=>{
+ console.log(element)
+})
+difference between array iteration using for loop and forEach
+--------------------------------------------------------------
+- Both are used to iterate over each element in an array
+- in for loop we can apply 'break' to exit from the loop, if specific condition 
+reaches
+- we can have better control over the elements in array (i value can be define on 
+our needs)
+- we can manually set the the value of i and length
+map()
+-----
+map method is used to create a new array by applying a function to each element 
+in an existing array. It doesn't modify the original array, but instead it returns 
+a new array
+containing the results of applying function to each element.
+const result = arr.map((elemen)=>{
+ // code block to be executed
+})
+eg: let arr = [1,2,3,4,5];
+const result = arr.map((ele)=>ele*2)
+// result array contains the new array wich hold 
+the results of the function
+filter()
+------------
+filter method is used to create a new arry containing only 
+the elements that satisfies a specific condition
+- it does not modify the original array, instead it create
+a new array
+syntax:
+const result = arr.filter((element)=>{
+ // filter condition
+})
+reduce()
+------------
+reduce method execute function over all elements in the 
+array and accumulates them into a single value
+syntax:
+const result = arr.reduce((accumulator, currentvalue)=>{
+ // code to be executed
+},initialvalue of accumulator)
+eg:
+sum of numbers in an array
+find()
+-----------
+find method is used to retrive the first element in an 
+array that satisfies the provided condition
+- it iterate over each element in the array and returns the
+first element for which the condition is true
+- if no element in the array satisfies the provided condition
+'undefined' is returned for
+includes()
+------------
+it is a built in method in javascript for arrays.
+ It is used to check whether an array contains a specific element.
+It returns trus, if the element is found and false, if the element not found
+syntax:
+arr.inculdes(value{to check}) 
+returns true or false
+some()
+----------
+some() method in js is used to check whether atleast one element in an array
+ satisfies specific condition
+ - it return true or false
+syntax: arr.some((element)=>{
+ // condition to check
+})
+slice
+----------
+- slice method is used to extract a section of an existing array and it 
+returns a new array
+- syntax:
+ arr.slice(start, end)
+ end: it will not take the end index, just one value behind the end index,
+ end index in not mandatory
+ if no end index , it take all values upto end
+splice
+---------
+splice method is used to add or remove array elelements
+it modifies the original Array
+syntax: 
+array.splice(index, count, item1, item2,...)
+reverse()
+----------
+reverse array elements
+syntax: arr.reverse()
+Nested array
+---------------
+array inside another array
+eg: let arr = [1,2,[3,4],5,6,[7,8]];
+ arr1= [1,2,1,2,1,2,3]]
+flat()
+---------
+flat method is used to convert nested array into specific depth
+let x= [1,[1,[1,[1,[1]]]]]
+x.flat(Infiity) - if depth is unknown we can give depth as Infinity
+Linear Search
+--------------------
+- also known as sequential Search
+- Simple algorithm it uses, that checks each element in an array sequentially
+ until the desired element is found or the array ends
+ - linear search can be applied on un-sorted array
+ Binary Search
+ -----------------
+ - Binary search is an efficient algorithm for finding an item from a sorted array
+ - It works repeatedly by dividing the array until, until specific item found
+ - first we find the mid of the array,
+ - if the value of target need to find is less than the mid, search continues in 
+the first half
+ - if the value of target is greater than the mid, search continues in the second 
+half
+ - if the target value is mid, then it returns the value
+ closure property
+ --------------------
+ Consider we have an outer function and inside that outer function,
+ there is an inner function.
+ The inner function has access to its own variables, its outer function 
+ variables and globally decalred variables
+ String methods
+ --------------------
+ 1) toLowerCase(): to convert string to lowercase
+ 2) toUpperCase(): to convert string to uppercase
+ 3) trim(): to remove white space from start and end of a string
+ trimStart(): to remove white space from start
+ trimEnd(): to remove white space from end
+4) startsWith: to check whether a string starts with 
+ specific character/word. It is case sensitive
+5) endsWith: to check whether a string ends with 
+ specific character/word. It is case sensitive
+6) includes : to check whether a string contains 
+ specific character/word. It is case sensitive
+7)charAt(index): to return charcter at specifc index;
+8) concat: for string concatenation/joining
+ str1.concat(str2)
+9) substring(startIndex, endIndex)
+10) split: it returns an array
+ split(seperator)
+ ** join( ): to convert array into string
+ join(sperator)

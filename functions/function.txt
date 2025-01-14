@@ -1,0 +1,130 @@
+Functions
+==================
+Functions are reusable blocks of code designed to perform a particular task. 
+Functions has two parts:
+1) function definition
+2) function call
+syntax for function definition
+-----------------------------
+function function_name(argument1, argument2, ..){
+ // block of code to be executed
+}
+// arguments are not mandatory
+function call
+----------------
+function_name(argument1, argument2, ..)
+Function Declarartion
+---------------------
+above one
+Function expression
+---------------------
+var function_name = function(arguments){
+ // code of block to be executed
+}
+function_name(arguments)
+return
+---------
+return is used to take result of a function, outside the function block
+Camel case: it is a naming convention in which each word within a compound word is
+ capitalized, except for the first word. 
+ this style is commonly used in programming for naming variables, 
+ functions, methods, objects, etc
+ addTwoNumbers
+Pre-defined functions in js
+----------------------------
+- Already defined functions, we only need to call that function. No need to defined
+- it is globally accessible
+ 1) console.log()
+ 2) alert()
+ 3) typeof()
+ 4) parseInt()
+Self-invoking functions
+--------------------------
+There is no need to call this function to execute, It execute by itself
+syntax:
+(function(){
+ // code of block to be executed
+})();
+setInterval()
+-----------------
+- this function continously execute in particular interval of time
+syntax:
+setinterval(function(){
+ // code block to execute
+}, time in milliseconds)
+setTimeout()
+-----------------
+- this function execute only once, when the timeout reaches
+setTimeout(function(){
+ // code to be executed
+}, time in milliseconds)
+callback functions
+-------------------
+A callback function is js is function , that is passed as an argumnet to another 
+function 
+and it is executed after a certain task is finished.
+Callbacks are a way to ensure that certain code doesn't execute until
+a specifc task is completed, allowing for better control over the flow of our 
+program
+Nested function
+-----------------
+A function is defined within another function
+Arrow Function
+------------------
+- also called fat arrow function
+- it is a concise way to write function expression
+- It provide compact syntax compared to traditional function expression
+syntax:
+variable = (arg1, arg2,..)=>{
+ // code of block to be extecuted
+}
+eg:
+var sum = (a,b)=>{
+ console.log(a+b)
+}
+ sum(2,3)
+- it provide shorter syntax for single expression
+- ie: if the arrow function body consists of a single expression, we can omit the 
+ curly braces and the return keyword. The result of expression will be 
+ implicitly/automatically returned
+ eg: 
+ var multiply=(a,b)=>a*b;
+ multiply(3,5)
+Hoisting
+--------------------
+Hoisting is a Javascript mechanism, where variables and function declarations are 
+moved to 
+the top of their containing scope before the code executes.
+This means that we can access variables and functions before they are declared;
+While Javascript execute a program, mainly it has 2 phases
+1) memory creation phase
+ - this the first step in executing a js program
+ - in this phase, javascript allocate memory for variables and functions
+ - assigning values and function invocations are not happening in this phase
+2) execution phase
+ - after memory creation phase, execution phase starts
+ - assigning values and function calling/invocation happens in this phase
+Functions expressions and arrow functions cannot be hoisted
+because, in arrow function and function expression, the functions are assigned to a
+variable.
+so in memory creation phase, this variables are added to the memory with value 
+undefined,
+only at the execution phase, the corresponding function definitions are assigned to
+that varaibles
+callback hell
+-------------------
+- it is also called pyramid of doom
+- it is term in javascript programming to describe a situation where
+ callback functions are nested within multiple level of operations
+- simply nested callback
+- if any one of the callback function fails, the entire code fails
+ function function1(function(result1)){
+ function2(result1, function(result2){
+ function3(result2, function(result3)){
+ ----------
+ }
+ })
+ }
+ mechanis, to solve callback hell
+ 1) using promise
+ 2) using async await
