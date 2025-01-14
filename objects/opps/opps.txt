@@ -1,0 +1,55 @@
+Pillers Of OOPS
+-------------------
+1) Inheritance
+2) Polymorphism
+3) Encapsulation
+4) Abstraction
+1) Inheritance: 
+ - It is a mechanism that allows, a class can inherit properties and methods from 
+another class
+ - mainly child class can access methods and properties in parent class
+ - extends keyword is used to implement inheritance
+2) Polymorphism
+ - behave differently based on number of arguments or method name from where it is 
+calling
+ a) method overloading
+ - not suported in javascript
+ - consider there are two methods with same, first method 
+ is accepting no argument and second method is accepting one
+ argument. If we call that method with no argumnet, it execute
+ first method and if we call method with one argumet, it execute
+ second method
+ - but in javascript it calls the last method in every case
+ 2) method overriding:
+ consider we have a parent class and a child class. In both class 
+ there are methods with same name
+ child class is inherited from parent class
+ if we create an object of child class and calls any method that are present
+ in both parent and child, method inside child class will execute
+ method inside child class overrides method in parent class
+3) Abstarction: 
+ - It is hiding the complex implemetation details of a system and 
+ exposing only the essential methods and features
+ eg: 
+ Date class
+4) Encapsulation:
+ - It provide privacy and maintain control over the transparency of properties 
+ and methods incide a class
+ - javascript not supporting access specifiers
+ For this Access specifiers are used
+ 3 types of access specifiers
+ ----------------------------
+ 1) Public
+ 2) Private
+ 3) Protected
+ 1) Public: 
+ - default access specifiers
+ - The class memeber can be accessible from any where
+ 
+ 2) Protected: 
+ - class memeber is accessible inside that class and its sub classes(child 
+class)
+ 3) Private:
+ - class member is accessible only within that class
+
+**************************************************************************
