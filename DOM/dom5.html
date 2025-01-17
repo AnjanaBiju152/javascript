@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>mearn</h3>
+    <h5 id="sub_heading">courses</h5>
+    <!-- access dom element using queryselector -->
+    <ul>
+        <li class="topics">Mongo </li>
+        <li class="topics">Express</li>
+        <li class="topics">Node</li>
+        <li class="topics">React</li>
+        <li class="topics">Angular</li>
+    </ul>
+    <ol>
+        <li class="fruits">apple</li>
+        <li class="fruits">orange</li>
+        <li class="fruits">banana</li>
+        <li class="fruits">mango</li>
+    </ol>
+    <script>
+        //by tagname
+        var temp1 = document.querySelector('h3');
+        console.log(temp1);
+        temp1.style.color = 'red'
+
+        //by id
+
+        var temp2 = document.querySelector('#sub_heading')
+        temp2.style.color = 'green'
+
+        //by classname
+        var temp3 = document.querySelector('.topics')
+        temp3.style.color = 'blue'
+
+
+
+        //using querySeletorAll
+
+        var temp4 = document.querySelectorAll('.fruits')
+        console.log(temp4);
+        temp4.forEach((item) => {
+            item.style.color = 'orange'
+        })
+    </script>
+</body>
+
+</html>

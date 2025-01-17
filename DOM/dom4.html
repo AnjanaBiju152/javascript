@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main_div">
+        <h3 class="heading">mearn</h3>
+        <ul>
+            <li class="topics">Mongo DB</li>
+            <li class="topics">Express</li>
+            <li class="topics"> Angular</li>
+            <li class="topics">React</li>
+            <li class="topics">Node js</li>
+        </ul>
+    </div>
+    <script>
+        // accessing dom element by class
+
+        //div
+        var mainClass = document.getElementsByClassName('main_div');
+        var mainClassArray = Array.from(mainClass);
+        console.log(mainClassArray);
+        mainClassArray[0].style.marginTop = "50px";
+        mainClassArray[0].style.marginLeft = "50px";
+        //li
+        var liClass = document.getElementsByClassName('topics');
+        var liClassArray = Array.from(liClass);
+        console.log(liClassArray);
+        liClassArray.map((item) => {
+            item.style.color = "red"
+            item.style.fontSize = "50px"
+        });
+        //h3
+        Array.from(document.getElementsByClassName('heading')).map((item) => item.style.color = "green")
+        // Array.from(document.getElementsByClassName('heading'))[0].style.color ="yellow"
+    </script>
+</body>
+
+</html>
