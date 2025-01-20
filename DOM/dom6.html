@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- accessing content of an html tag -->
+    <h3 id="main_heading"></h3>
+    <h5 id='sub_heading'>JavaScript</h5>
+    <script>
+        var mainHeading = document.getElementById('main_heading')
+        mainHeading.innerHTML = 'HELLO WORLD'
+
+        var subHeading = document.getElementById('sub_heading')
+        var content = subHeading.innerHTML
+        subHeading.innerHTML = content + " angular"
+        console.log(content);
+        //alert message
+        alert("hi")
+
+        // accesing html element content in single step
+
+        // var subHeading = document.getElementById('sub_heading').innerHTML
+        // console.log(subHeading);
+
+    </script>
+</body>
+
+</html>
