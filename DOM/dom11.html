@@ -1,0 +1,62 @@
+<!-- check whether string is palindrome or not -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="https://tse3.mm.bing.net/th?id=OIP.-mninJze4_ngmJ8y8R6g-gHaEK&pid=Api&P=0&h=180"
+        type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-5">
+                <h2 class="text-primary mt-5 text-center">Palindrome or Not</h2>
+                <form class="border border-primary rounded mt-3 p-3">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">String</label>
+                        <input type="text" class="form-control" id="input" aria-describedby="emailHelp">
+
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="palindrome()"> Check </button>
+                    <button type="button" class="btn btn-primary" onclick="clearbutton()"> CLEAR </button>
+                </form>
+                <h4 class="mt-2 text-success" id="result">Result:</h4>
+            </div>
+        </div class="col-md-4">
+        <script>
+            function palindrome() {
+                var resultElement = document.getElementById('result');
+                str1 = input.value 
+                var temp = str1.split("").reverse().join('')
+                if(temp === str1){
+                  
+                    resultElement.innerHTML = str1 + " is  palindrome";
+                    resultElement.style.color="green"
+                }
+                else{
+                    resultElement.innerHTML = str1 + " is not  palindrome";
+                    resultElement.style.color="red"
+                }
+            }
+
+            // function clearbutton() {
+            //     var num1Element = document.getElementById('first_number')
+            //     var num2Element = document.getElementById('second_number')
+            //     num1Element.value = ""
+            //     num2Element.value =""
+            //     var resultElement =document.getElementById('result_value')
+            //     resultElement.innerHTML='result :'
+            // }
+        </script>
+</body>                          
+
+</html> 

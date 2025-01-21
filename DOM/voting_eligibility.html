@@ -21,30 +21,45 @@
                 <h2 class="text-primary mt-5 text-center">CHECK VOTING ELIGIBILITY</h2>
                 <form class="border border-primary mt-5 p-3 rounded">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Enter Age</label>
-                        <input type="text" class="form-control" id="userAge" aria-describedby="emailHelp">
+                        <label for="exampleInputAge" class="form-label">Enter Age</label>
+                        <input type="text" class="form-control" id="userAge" oninput="checkvalue()"
+                            aria-describedby="ageHelp">
 
                     </div>
 
                     <button type="button" class="btn btn-primary" onclick="checkEligibility()">CHECK
                         ELIGIBILITY</button>
                 </form>
+                <!-- html element to print message -->
                 <p id="response_message"></p>
             </div>
             <div class="col-md-4"></div>
         </div>
     </div>
     <script>
+        function checkvalue() {
+            response_element = document.getElementById('response_message')
+            response_element.innerHTML = ""
+
+        }
         function checkEligibility() {
-            const userage = userAge.value;
             var response_element = document.getElementById('response_message')
-            if (userage >= 18) {
-                response_element.innerHTML = "Eligible for voting"
-                response_element.style.color ="green"
+            const userage = userAge.value;
+            if (!userage) {
+                response_element.innerHTML = "please enter user age"
+                response_element.style.color = "orange"
+
             }
             else {
-                response_element.innerHTML = "Not Eligible for voting"
-                response_element.style.color ="red"
+
+                if (userage >= 18) {
+                    response_element.innerHTML = "Eligible for voting"
+                    response_element.style.color = "green"
+                }
+                else {
+                    response_element.innerHTML = "Not Eligible for voting"
+                    response_element.style.color = "red"
+                }
             }
         }
     </script>
