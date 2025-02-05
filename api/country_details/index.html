@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country_Details</title>
+    <link rel="shortcut icon" href="https://tse1.mm.bing.net/th?id=OIP.cKcjviNR9El8OEB2OOMiaAHaFQ&pid=Api&P=0&h=180"
+        type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url("https://cdn.pixabay.com/photo/2022/06/25/13/33/landscape-7283516_1280.jpg");
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h3 class="text-primary text-center mt-5 mb-5 "> COUNTRY DETAILS</h3>
+                <div class="d-flex">
+                    <input type="text" placeholder="Country Name" class="form-control" id="country_name">
+                    <input type="button" value="Search" class="btn btn-primary ms-3" onclick="searchDetails()">
+                </div>
+                <div id="countrycard" class=" d-flex justify-content-center align-item-center">
+                </div>
+
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <script>
+        const searchDetails = async () => {
+            if (country_name.value !== '') {
+                var country = country_name.value;
+                const response = await fetch(`https://restcountries.com/v3.1/name/${country}?fullText=true`);
+                console.log(response);
+                response.json().then((data) => {
+                    console.log(data);
+                    var result = data[0];
+                    let cname = result.name.common;
+                    let ccapital = result.capital[0];
+                    let cflag = result.flags.png;
+                    let clanguages = []
+                    for (lang in result.languages){
+                        clanguages.push(result.languages[lang])
+                    }
+                    let ccurrency = []
+                    for (curr in result.currencies){
+                        ccurrency.push(curr)
+                    }
+                    let cmap = result.maps.googleMaps
+                    //binding card
+                    countrycard.innerHTML = `<div class="card  mt-5 p-2" style="width: 18rem;">
+                    <img src=${cflag} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${cname}</h5>
+                        <ul>
+    <li>Captial: ${ccapital}</li>
+    <li>Languages: ${clanguages}</li>
+    <li>Currencies:${ccurrency}</li>
+    <li>Map:<a href="${cmap}" target ="_blank"> Go To Map</a></li>
+    <li></li>
+</ul>
+       
+                        
+                    </div>
+                </div>`
+                })
+
+            }
+            else {
+                alert("please enter country name")
+            }
+        }
+    </script>
+</body>
+
+</html>
