@@ -1,0 +1,101 @@
+DOM (Document Object Model)
+---
+- while browser loads a HTML page, it create a tree like structure with the 
+containing
+ html elements
+ - the tree consists of nodes, each node is an html element
+ How to apply javascript in HTML file
+ ------------------------------------
+ 1) internal
+ <script></script>
+ - it is better to use script after closing of body target
+ 2) external js
+ <script src="url"></script>
+How to access html elements
+----------------------------
+1) by tag name
+ document.getElementsByTagName('tag_name')
+ - it returns collection
+ - collection is a data type created by browser, similar to array
+ - we have to convert this collection into a normal Array for using it
+ Array.from(collection_name)
+ - then map each item in the array and apply the style
+ eg:
+ Array.from(collection_name).map(item=>item.style.color="green")
+2) by id
+ document.getElementById('id_name')
+ - it returns that specific html element
+ eg: 
+ var x= document.getElementById('mainheader')
+ x.style.color= 'red';
+3) by class name
+ document.getElementsByClassName('class_name')
+ - it returns collection
+ - collection is a data type created by browser, similar to array
+ - we have to convert this collection into a normal Array for using it
+ Array.from(collection_name)
+ - then map each item in the array and apply the style
+ eg:
+ Array.from(collection_name).map(item=>item.style.color="green")
+4) by query selector
+ document.querySelector('tag_name/#id_name/.class_name')
+ - it returns that specific html element
+ - it only return the first html element that matches the condition
+5) by query selector All
+ document.guerySelectorAll('tag_name/#id_name/.class_name')
+ - it returns Node list (same as array)
+ - we need to convert the Node list to array for using it
+ - it returns all the html elements that matches the condition
+.innerHTML
+- used to access content of a html element
+Events
+-------
+Action performed by the user that leads to dom updation
+eg: button click
+ : mouse hover
+ : keydown
+methods: onclick()
+ mousehover()
+Local Storage and Session Storage
+---------------------------------------
+1) Local Storage
+ -It is a browser memory used to store data permanantly in browser
+ -Data still exists in the local storage even if we close the tab,
+ close the browser or shutdown the system
+ - value store as key value pairs
+ - key and value must be string
+ - JSON.stringify() is used to convert object to string
+ - JOSN.parse() is used to convert string to original object
+ Operations on Local storage:
+ -----------------------------
+ localStorage.setItem("key":"value")
+ - to store an item into local storage
+ localStorage.getItem("key")
+ - to retrive value from the local storage corresponding to that key
+ localStorage.removeItem("key")
+ - to delete an item from the local storage
+ - size limit : around 5MB
+ usecase
+ -------------
+ - used for storing data that needs to persist peramanantly
+ - to store user preference, settings, themes, user authentication tokens
+ sessionStorage
+ ------------------
+ - it is also a browser memory
+ - Data stored in session storage is only available for the duration of that 
+page session
+ - It is deleted ,when that page session ends, which means user closes the tab 
+or browser window
+ - size limit : around 5MB
+ Operations on Session storage:
+ -----------------------------
+ sessionStorage.setItem("key":"value")
+ - to store an item into session storage
+ sessionStorage.getItem("key")
+ - to retrive value from the session storage corresponding to that key
+ sessionStorage.removeItem("key")
+ - to delete an item from the session storage
+ Use case:
+ -----------
+ used to store temperory data, that should vailable only as long as the
+ user is on the current page
